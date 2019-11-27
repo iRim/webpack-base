@@ -1,0 +1,2 @@
+.wrapper{display:block;text-align:center}h1,h3{color:red;size:24px}.wrapper{width:300px;border:1px solid #ccc;margin:100px auto;-webkit-animation-name:tada;animation-name:tada}.wrapper:hover{-webkit-animation:tada 1s linear infinite;animation:tada 1s linear infinite}@keyframes tada{from{transform:scale3d(1, 1, 1)}10%,20%{transform:scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)}30%,50%,70%,90%{transform:scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)}40%,60%,80%{transform:scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)}to{transform:scale3d(1, 1, 1)}}
+

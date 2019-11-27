@@ -1,0 +1,32 @@
+/*  
+this is block
+*/
+.wrapper {
+  display: block;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+  size: 24px;
+}
+
+h3 {
+  color: red;
+  size: 24px;
+}
+
+/* 
+https://daneden.github.io/animate.css/
+*/
+.wrapper {
+  width: 300px;
+  border: 1px solid #cccccc;
+  margin: 100px auto;
+
+  animation-name: tada;
+}
+
+.wrapper:hover {
+  animation: tada 1s infinite linear;
+}
