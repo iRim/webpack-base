@@ -29,6 +29,13 @@ module.exports = {
         exclude: "/node_modules/"
       },
       {
+        test: /\.vue$/i,
+        loader: "vue-loader",
+        options: {
+          scss: "vue-style-loader!css-loader!sass-loader"
+        }
+      },
+      {
         test: /\.scss|.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
