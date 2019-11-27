@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 const PATHS = {
   app: path.join(__dirname, "./app"),
@@ -32,7 +33,9 @@ module.exports = {
         test: /\.vue$/i,
         loader: "vue-loader",
         options: {
-          scss: "vue-style-loader!css-loader!sass-loader"
+          loader: {
+            scss: "vue-style-loader!css-loader!sass-loader"
+          }
         }
       },
       {
@@ -53,8 +56,7 @@ module.exports = {
                 require("css-mqpacker"),
                 require("postcss-flexbugs-fixes"),
                 require("postcss-animation"),
-                require("postcss-focus"),
-                require("webpack-merge")
+                require("postcss-focus")
               ]
             }
           }
@@ -70,6 +72,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: "css/[name].css"
     }),
@@ -79,7 +82,8 @@ module.exports = {
       filename: "./index.html"
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.static}/img`, to: `${PATHS.public}/img` }
+      { from: `${PATHS.static}/img`, to: `${PATHS.public}/img` },
+      { from: `${PATHS.static}/favicon.ico`, to: `${PATHS.public}` }
     ])
   ]
 };
