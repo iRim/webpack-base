@@ -6,9 +6,9 @@ module.exports = {
     app: "./app/index.js"
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "./public_html/js"),
-    publicPath: "/js"
+    filename: "js/[name].js",
+    path: path.resolve(__dirname, "./public_html"),
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -45,8 +45,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[name].[id].css"
+      filename: "css/[name].css"
+      // chunkFilename: "[name].[id].css"
     })
   ]
 };
