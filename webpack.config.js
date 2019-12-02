@@ -15,7 +15,9 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: PATHS.app
+    // app: PATHS.app,
+    news: path.join(PATHS.app, "./modules/news"),
+    profile: path.join(PATHS.app, "./modules/profile")
   },
   output: {
     filename: "js/[name].[hash].js",
