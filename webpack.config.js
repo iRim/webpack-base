@@ -18,7 +18,7 @@ module.exports = {
     app: PATHS.app
   },
   output: {
-    filename: "js/[name].js",
+    filename: "js/[name].[hash].js",
     path: PATHS.public,
     publicPath: "/"
   },
@@ -79,16 +79,28 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css"
+      filename: "css/[name].[hash].css"
     }),
     new HtmlWebpackPlugin({
-      hash: false,
       template: `${PATHS.static}/index.html`,
       filename: "./index.html"
+      // inject: false
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.static}/img`, to: `${PATHS.public}/img` },
       { from: `${PATHS.static}/favicon.ico`, to: `${PATHS.public}` }
     ])
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: "vendors",
+          test: /node_modules/,
+          chunks: "all",
+          enforce: true
+        }
+      }
+    }
+  }
 };
