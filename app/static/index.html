@@ -7,13 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="wrapper">
-      <h1>webpack</h1>
-    </div>
+    <div id="app">
+      <button @click="component = !component">Click this!!!</button>
 
-    <ul>
-      <li style="background-image: url(/img/001.jpg);"></li>
-      <li style="background-image: url(/img/002.jpg);"></li>
-    </ul>
+      <component v-if="component"></component>
+    </div>
   </body>
 </html>
