@@ -17,4 +17,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style class="scss">
+.test {
+  font-size: 250px;
+  font-weight: bolder;
+}
+</style>
